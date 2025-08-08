@@ -50,6 +50,10 @@ const CONSTANTS = {
     ICMS_DIVISOR: 0.88 // Para calcular ICMS de 12%
 };
 
+// Senha predefinida
+const PASSWORD = "sym2025";
+
+
 // Formatação de moeda
 function formatCurrency(value) {
     return new Intl.NumberFormat('pt-BR', {
@@ -212,11 +216,31 @@ function displayResults(results) {
 
 // Event listeners
 document.addEventListener('DOMContentLoaded', function() {
-    setupCurrencyInput();
-    
+    const passwordModal = document.getElementById('passwordModal');
+    const passwordForm = document.getElementById('passwordForm');
+    const passwordInput = document.getElementById('passwordInput');
+    const passwordError = document.getElementById('passwordError');
+    const calculatorContainer = document.getElementById('calculatorContainer');
+
+    passwordForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const enteredPassword = passwordInput.value;
+
+        if (enteredPassword === PASSWORD) {
+            passwordModal.classList.add('hidden');
+            calculatorContainer.classList.remove('hidden');
+            setupCurrencyInput(); // Inicia o setup da calculadora após o acesso
+        } else {
+            passwordError.classList.remove('hidden');
+            passwordInput.value = ''; // Limpa o campo
+            passwordInput.focus();
+        }
+    });
+
     const form = document.getElementById('transportForm');
     const calculateBtn = form.querySelector('.btn-calculate');
-    
+    const resultSection = document.getElementById('resultSection');
+
     form.addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -255,12 +279,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 500);
     });
-});
 
-// Função para limpar resultados quando o formulário for alterado
-document.addEventListener('DOMContentLoaded', function() {
+    // Função para limpar resultados quando o formulário for alterado
     const formInputs = document.querySelectorAll('#transportForm select, #transportForm input');
-    const resultSection = document.getElementById('resultSection');
     
     formInputs.forEach(input => {
         input.addEventListener('change', function() {

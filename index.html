@@ -7,17 +7,34 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="overlay" id="passwordModal">
+        <div class="password-modal">
+            <h2 class="password-title">Acesso Restrito</h2>
+            <p class="password-subtitle">Por favor, insira a senha para acessar a calculadora.</p>
+            <form id="passwordForm" class="password-form">
+                <div class="form-group">
+                    <label for="passwordInput" class="label">Senha:</label>
+                    <input type="password" id="passwordInput" class="input" placeholder="Digite a senha" required>
+                </div>
+                <button type="submit" class="btn-calculate">
+                    <span class="btn-text">Acessar</span>
+                </button>
+                <p id="passwordError" class="password-error hidden">Senha incorreta. Tente novamente.</p>
+            </form>
+        </div>
+    </div>
+
     <header class="header">
         <div class="container">
             <div class="logos">
                 <div class="logo">
-                    <img src="IMG/TAC.png" alt="TAC Corporation" class="logo-img">
+                    <img src="public/images-removebg-preview.png" alt="TAC Corporation" class="logo-img">
                 </div>
                 <div class="logo">
-                    <img src="IMG/BTG.png" alt="Sertrading" class="logo-img">
+                    <img src="public/download-removebg-preview (1).png" alt="Sertrading" class="logo-img">
                 </div>
                 <div class="logo">
-                    <img src="IMG/SYM.png" alt="Symrise" class="logo-img">
+                    <img src="public/image.png" alt="Symrise" class="logo-img">
                 </div>
             </div>
         </div>
@@ -25,7 +42,7 @@
 
     <main class="main">
         <div class="container">
-            <div class="calculator-wrapper">
+            <div class="calculator-wrapper hidden" id="calculatorContainer">
                 <div class="form-section">
                     <h1 class="title">Calculadora de Transporte All-in</h1>
                     <p class="subtitle">Calcule o valor total do seu transporte rodoviário</p>
@@ -81,8 +98,7 @@
                 <div class="result-section" id="resultSection" style="display: none;">
                     <h2 class="result-title">Resultado do Cálculo</h2>
                     <div class="result-content" id="resultContent">
-                        <!-- Resultado será inserido aqui via JavaScript -->
-                    </div>
+                        </div>
                 </div>
             </div>
         </div>
