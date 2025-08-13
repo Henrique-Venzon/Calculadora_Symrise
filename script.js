@@ -368,10 +368,16 @@ function exportToExcel(results) {
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr style="font-weight: bold; background-color: #6d0000ff; color:#fff;">
-                        <td>Valor Total Estimado (All-in)</td>
-                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.total.toFixed(2).replace('.', ',')}</td>
-                    </tr>
+                <tr style="font-weight: bold;">
+    <td style="background-color:#7b0909;color:#fff;">
+        Valor Total Estimado (All-in)
+    </td>
+    <td class="align-right" 
+        style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';background-color:#7b0909;color:#fff;">
+        ${results.total.toFixed(2).replace('.', ',')}
+    </td>
+</tr>
+
                 </tfoot>
             </table>
         </body>
