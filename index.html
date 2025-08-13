@@ -56,16 +56,31 @@
                                 <option value="imo">Lotação IMO (químico classificado)</option>
                             </select>
                         </div>
-
+                        
                         <div class="form-group">
-                            <label for="vehicleType" class="label">Tipo de Veículo</label>
-                            <select id="vehicleType" name="vehicleType" class="select" required>
-                                <option value="">Selecione o tipo de veículo</option>
-                                <option value="truck">Truck Baú</option>
-                                <option value="carreta-bau">Carreta Baú</option>
-                                <option value="carreta-container">Carreta Porta Container</option>
-                                <option value="rodo-trem">Carreta Rodo-Trem Porta Container</option>
-                            </select>
+                            <label class="label">Tipo de Carga</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="payloadType" value="bau" required> Baú</label>
+                                <label><input type="radio" name="payloadType" value="container" required> Container</label>
+                            </div>
+                        </div>
+
+                        <div id="bauOptions" class="hidden">
+                            <div class="form-group">
+                                <label for="pallets" class="label">Quantidade de Pallets</label>
+                                <input type="number" id="pallets" name="pallets" class="input" placeholder="Ex: 12">
+                            </div>
+                            <div class="form-group">
+                                <label for="totalWeight" class="label">Peso Total Bruto (kg)</label>
+                                <input type="number" id="totalWeight" name="totalWeight" class="input" placeholder="Ex: 8000">
+                            </div>
+                        </div>
+
+                        <div id="containerOptions" class="hidden">
+                             <div class="form-group">
+                                <label for="containerQty" class="label">Quantidade de Containers (20' ou 40')</label>
+                                <input type="number" id="containerQty" name="containerQty" class="input" placeholder="Ex: 1">
+                            </div>
                         </div>
 
                         <div class="form-group">
@@ -99,6 +114,9 @@
                     <h2 class="result-title">Resultado do Cálculo</h2>
                     <div class="result-content" id="resultContent">
                         </div>
+                    <button id="exportBtn" class="btn-export hidden">
+                        <span class="btn-text">Exportar para Excel</span>
+                    </button>
                 </div>
             </div>
         </div>

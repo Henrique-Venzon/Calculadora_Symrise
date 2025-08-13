@@ -82,7 +82,7 @@ body {
 /* Main */
 .main {
     flex: 1;
-    padding: 3rem 0;
+    padding: 2.5rem 0;
 }
 
 .calculator-wrapper {
@@ -94,7 +94,7 @@ body {
 
 .form-section {
     background: var(--card-background);
-    padding: 2.5rem;
+    padding: 2rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
@@ -189,16 +189,67 @@ body {
     font-size: 1.2rem;
 }
 
+/* Novo estilo para o grupo de rádio */
+.radio-group {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.radio-group input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 2px solid var(--border-color);
+    border-radius: 50%;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+    transition: var(--transition);
+}
+
+.radio-group input[type="radio"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em var(--primary-color);
+}
+
+.radio-group input[type="radio"]:checked {
+    border-color: var(--primary-color);
+}
+
+.radio-group input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+
+
 /* Result Section */
 .result-section {
     background: var(--card-background);
-    padding: 2.5rem;
+    padding: 2.3rem;
     border-radius: var(--border-radius);
     box-shadow: var(--shadow);
     border: 1px solid var(--border-color);
-    position: sticky;
     top: 2rem;
-    align-self: start; /* Ensures it sticks properly */
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .result-title {
@@ -214,6 +265,20 @@ body {
 .result-title::before {
     content: '📊';
     font-size: 1.2rem;
+}
+
+.vehicle-info {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: var(--background-color);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 8px;
+}
+
+.vehicle-info p {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--text-primary);
 }
 
 .cost-breakdown {
@@ -277,7 +342,7 @@ body {
     background: var(--text-primary);
     color: white;
     text-align: center;
-    padding: 1.5rem 0;
+    padding: 1.2rem 0;
     margin-top: auto;
 }
 
@@ -441,4 +506,33 @@ body {
 
 .hidden {
     display: none !important;
+}
+
+/* Novo estilo para o botão de exportar */
+.btn-export {
+    background: var(--success-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    box-shadow: var(--shadow);
+    width: 100%;
+}
+
+.btn-export:hover {
+    background: #047857;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-export:active {
+    transform: translateY(0);
 }
