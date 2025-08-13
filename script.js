@@ -285,7 +285,7 @@ function exportToExcel(results) {
             <meta charset="utf-8">
             <style>
                 table {
-                    width: 100%;
+                    width: 32%;
                     border-collapse: collapse;
                     font-family: Arial, sans-serif;
                 }

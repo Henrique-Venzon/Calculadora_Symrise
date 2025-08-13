@@ -510,6 +510,7 @@ body {
 
 /* Novo estilo para o botão de exportar */
 .btn-export {
+    margin-top: 15PX;
     background: var(--success-color);
     color: white;
     border: none;
