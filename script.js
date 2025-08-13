@@ -310,7 +310,7 @@ function exportToExcel(results) {
             <table>
                 <thead>
                     <tr>
-                        <th colspan="2" class="align-center">Detalhes do Cálculo de Transporte</th>
+                        <th colspan="2" class="align-center" style="font-size: 20px;">Detalhes do Cálculo de Transporte</th>
                     </tr>
                     <tr>
                         <th>Item</th>
@@ -323,19 +323,19 @@ function exportToExcel(results) {
                     </tr>
                     <tr>
                         <td>${freteLabel}</td>
-                        <td class="align-right">${results.frete.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.frete.toFixed(2).replace('.', ',')}</td>
                     </tr>
                     <tr>
                         <td>Pedágio</td>
-                        <td class="align-right">${results.pedagio.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.pedagio.toFixed(2).replace('.', ',')}</td>
                     </tr>
                     <tr>
                         <td>Ad Valorem (0,10%)</td>
-                        <td class="align-right">${results.adValorem.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.adValorem.toFixed(2).replace('.', ',')}</td>
                     </tr>
                     <tr>
                         <td>GRIS (0,03%)</td>
-                        <td class="align-right">${results.gris.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.gris.toFixed(2).replace('.', ',')}</td>
                     </tr>
     `;
 
@@ -343,7 +343,7 @@ function exportToExcel(results) {
         tableHtml += `
             <tr>
                 <td>Isca RFI</td>
-                <td class="align-right">${results.iscaRfi.toFixed(2).replace('.', ',')}</td>
+                <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.iscaRfi.toFixed(2).replace('.', ',')}</td>
             </tr>
         `;
     }
@@ -352,7 +352,7 @@ function exportToExcel(results) {
         tableHtml += `
             <tr>
                 <td>Seguro Casco Container</td>
-                <td class="align-right">${results.seguroCasco.toFixed(2).replace('.', ',')}</td>
+                <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.seguroCasco.toFixed(2).replace('.', ',')}</td>
             </tr>
         `;
     }
@@ -360,17 +360,17 @@ function exportToExcel(results) {
     tableHtml += `
                     <tr>
                         <td>Ajudantes</td>
-                        <td class="align-right">${results.ajudantes.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.ajudantes.toFixed(2).replace('.', ',')}</td>
                     </tr>
                     <tr>
                         <td>ICMS (12% SC para SP)</td>
-                        <td class="align-right">${results.icms.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.icms.toFixed(2).replace('.', ',')}</td>
                     </tr>
                 </tbody>
                 <tfoot>
-                    <tr style="font-weight: bold; background-color: #f2f2f2;">
+                    <tr style="font-weight: bold; background-color: #6d0000ff; color:#fff;">
                         <td>Valor Total Estimado (All-in)</td>
-                        <td class="align-right">${results.total.toFixed(2).replace('.', ',')}</td>
+                        <td class="align-right" style="mso-number-format:'\\0022R$\\0022\\ #,##0.00';">${results.total.toFixed(2).replace('.', ',')}</td>
                     </tr>
                 </tfoot>
             </table>
